@@ -2,18 +2,19 @@ spring:
   application:
     name: general-election-qa
   datasource:
-    url: jdbc:mariadb://aaaicu.iptime.org:33068/general-election-member?serverTimezone=Asia/Seoul # MariaDB의 URL
-    username: ge # 데이터베이스 접속 계정
+    url: jdbc:postgresql://aaaicu.iptime.org:33068/general_election_member
+    username: postgres # 데이터베이스 접속 계정
     password: ${DB_PASSWORD} # 데이터베이스 접속 비밀번호
-    driver-class-name: org.mariadb.jdbc.Driver # JDBC 드라이버 클래스 이름
+    driver-class-name: org.postgresql.Driver # JDBC 드라이버 클래스 이름
 
   jpa:
     hibernate:
       ddl-auto: update # 애플리케이션을 실행할 때마다 테이블을 자동으로 생성
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MariaDBDialect # MariaDB의 Hibernate Dialect
-
+        dialect: org.hibernate.dialect.PostgreSQLDialect # PostgreSQL의 Hibernate Dialect
+        format_sql: true
+        show-sql: true
 logging:
   level:
     org:
