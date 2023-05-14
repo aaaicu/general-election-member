@@ -2,7 +2,7 @@ spring:
   application:
     name: general-election-qa
   datasource:
-    url: jdbc:mariadb://aaaicu.iptime.org:33068/general-election?serverTimezone=Asia/Seoul # MariaDB의 URL
+    url: jdbc:mariadb://aaaicu.iptime.org:33068/general-election-member?serverTimezone=Asia/Seoul # MariaDB의 URL
     username: ge # 데이터베이스 접속 계정
     password: ${DB_PASSWORD} # 데이터베이스 접속 비밀번호
     driver-class-name: org.mariadb.jdbc.Driver # JDBC 드라이버 클래스 이름
