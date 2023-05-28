@@ -28,3 +28,7 @@ logging:
 
 general_election_hosts:
   community: http://localhost:18880
+
+auth-info:
+  kakao:
+    redirect_uri: http:localhost:${server.port}/auth/kakao/callback
