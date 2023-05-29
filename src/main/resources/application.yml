@@ -5,6 +5,6 @@ auth-info:
   kakao:
     host: https://kauth.kakao.com/oauth
     api-key: 0f1aea0b9cf2b66c7752bd776ba69b7a
-    redirect_uri: ${general-election-server-host}:${server.port}/auth/kakao/callback
+    redirect_uri: ${general-election-server-host}/auth/kakao/callback
     auth-request-url: ${auth-info.kakao.host}/authorize?client_id=${auth-info.kakao.api-key}&redirect_uri=${auth-info.kakao.redirect_uri}&response_type=code
     token-request-url: ${auth-info.kakao.host}/token
