@@ -11,8 +11,7 @@ RUN ./gradlew bootjar
 
 RUN ls -al /app/build/libs/
 RUN ls -al /app/build/libs/general-election-member*.jar
-
-COPY /app/build/libs/general-election-member*.jar /general-election-member.jar
+COPY --from=build /app/build/libs/general-election-member*.jar /general-election-member.jar
 
 
 EXPOSE 18890
