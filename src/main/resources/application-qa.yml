@@ -1,6 +1,6 @@
 spring:
   application:
-    name: general-election-qa
+    name: general-election-prod
   datasource:
     url: jdbc:postgresql://aaaicu.iptime.org:33068/general_election_member
     username: postgres # 데이터베이스 접속 계정
