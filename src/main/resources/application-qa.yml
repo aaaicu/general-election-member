@@ -20,3 +20,5 @@ logging:
     org:
       hibernate:
         SQL: debug # Hibernate가 실행하는 SQL 쿼리 디버깅을 위한 로그 레벨
+
+general-election-server-host: http://aaaicu.iptime.org:18890

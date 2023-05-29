@@ -1,6 +1,6 @@
 package com.parsrich.generalelectionmember.domain.auth.service
 
-import com.parsrich.generalelectionmember.domain.auth.application.AuthService
+import com.parsrich.generalelectionmember.domain.auth.application.KakaoAuthService
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional
 internal class AuthServiceTest() {
 
     @Autowired
-    lateinit var authService: AuthService
+    lateinit var kakaoAuthService: KakaoAuthService
 
     @Test
     @DisplayName("테스트")

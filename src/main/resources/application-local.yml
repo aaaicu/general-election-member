@@ -31,4 +31,6 @@ general_election_hosts:
 
 auth-info:
   kakao:
-    redirect_uri: http:localhost:${server.port}/auth/kakao/callback
+    redirect_uri: http:localhost:${server.port}/api/auth/kakao/callback
+
+general-election-server-host: http://localhost:18890
