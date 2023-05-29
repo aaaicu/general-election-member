@@ -1,4 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.time.format.*
+import java.time.*
 
 plugins {
     val kotlinVersion = "1.7.22"
@@ -13,7 +15,7 @@ plugins {
 }
 
 group = "com.parsrich"
-version = "0.0.1-SNAPSHOT"
+version = generateVersion()
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 configurations {
@@ -56,4 +58,20 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks {
+    named<Jar>("jar") {
+        enabled = false
+    }
+}
+
+fun generateTimestamp(): String {
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HHmmss")
+    return LocalDateTime.now().format(formatter)
+}
+
+fun generateVersion(): Any {
+    val timestamp = generateTimestamp()
+    return "$timestamp-SNAPSHOT"
 }
