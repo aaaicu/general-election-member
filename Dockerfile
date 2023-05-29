@@ -14,7 +14,7 @@ RUN ls -al
 RUN ls -al build
 RUN ls -al build/libs
 
-COPY build/libs/*.jar /general-election-member.jar
+COPY /app/build/libs/general-election-member*.jar /general-election-member.jar
 
 
 EXPOSE 18890

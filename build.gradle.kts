@@ -15,7 +15,7 @@ plugins {
 }
 
 group = "com.parsrich"
-version = generateVersion()
+version = generateTimestamp()
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 configurations {
@@ -69,9 +69,4 @@ tasks {
 fun generateTimestamp(): String {
     val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HHmmss")
     return LocalDateTime.now().format(formatter)
-}
-
-fun generateVersion(): Any {
-    val timestamp = generateTimestamp()
-    return "$timestamp-SNAPSHOT"
 }

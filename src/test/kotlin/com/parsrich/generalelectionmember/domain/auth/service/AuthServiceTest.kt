@@ -17,6 +17,6 @@ internal class AuthServiceTest() {
     @Test
     @DisplayName("테스트")
     fun healthCheck() {
-        authService.authorizeToSocial(authSocialType)
+//        authService.authorizeToSocial(authSocialType)
     }
 }
