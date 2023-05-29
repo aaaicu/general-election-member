@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM openjdk:17 as builder
 RUN microdnf install findutils
 RUN mkdir -p /app
 WORKDIR /app
@@ -11,8 +11,9 @@ RUN ./gradlew bootjar
 
 RUN ls -al /app/build/libs/
 RUN ls -al /app/build/libs/general-election-member*.jar
-COPY --from=build /app/build/libs/general-election-member*.jar /general-election-member.jar
+COPY --from=builder /app/build/libs/general-election-member*.jar /general-election-member.jar
 
 
 EXPOSE 18890
+ENV ENC_KEY=0
 ENTRYPOINT exec java -Djasypt.encryptor.password=${ENC_KEY} -jar /general-election-member.jar
