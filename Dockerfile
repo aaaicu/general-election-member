@@ -8,11 +8,9 @@ RUN ls -al
 
 RUN chmod +x ./gradlew
 RUN ./gradlew bootjar
-RUN pwd
 
-RUN ls -al
-RUN ls -al build
-RUN ls -al build/libs
+RUN ls -al /app/build/libs/
+RUN ls -al /app/build/libs/general-election-member*.jar
 
 COPY /app/build/libs/general-election-member*.jar /general-election-member.jar
 
