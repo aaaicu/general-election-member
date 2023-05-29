@@ -11,6 +11,8 @@ RUN chmod +x ./gradlew
 RUN ./gradlew bootjar
 RUN pwd
 RUN ls -al
+RUN ls -al build
+RUN ls -al build/libs
 
 FROM openjdk:17
 COPY --from=builder build/libs/*.jar /general-election-member.jar
