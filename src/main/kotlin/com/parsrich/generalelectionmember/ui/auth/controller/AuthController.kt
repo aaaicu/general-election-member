@@ -17,6 +17,8 @@ class AuthController(val authService: AuthService) {
     @GetMapping("/{authSocialType}")
     fun authorize(@PathVariable authSocialType: String): ResponseEntity<KakaoLoginResponseDTO> {
         authService.authorizeToSocial(AuthSocialType.KAKAO)
+
+
         return ResponseEntity.ok().build()
     }
 }
