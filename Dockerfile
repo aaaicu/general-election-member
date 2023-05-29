@@ -13,7 +13,7 @@ COPY --from=builder /app/build/libs/general-election-member*.jar /general-electi
 
 EXPOSE 18890
 ENV ENC_KEY=0
-#ENTRYPOINT exec java -Djasypt.encryptor.password=${ENC_KEY} -jar /general-election-member.jar
+ENTRYPOINT exec java -Djasypt.encryptor.password=${ENC_KEY} -jar /general-election-member.jar
 
-ENTRYPOINT ["nohup","java","-jar","-Djasypt.encryptor.password=${ENC_KEY}",\
-"-Dspring.profiles.active=prod","general-election-member.jar","2>&1","&"]
+#ENTRYPOINT ["nohup","java","-jar","-Djasypt.encryptor.password=${ENC_KEY}",\
+#"-Dspring.profiles.active=prod","general-election-member.jar","2>&1","&"]
