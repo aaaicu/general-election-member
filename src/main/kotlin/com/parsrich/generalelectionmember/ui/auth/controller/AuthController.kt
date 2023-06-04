@@ -26,10 +26,9 @@ class AuthController(val authServiceFactory: AuthServiceFactory) {
         return ResponseEntity.ok().headers(responseHeaders).body(authorize)
     }
 
-    @PostMapping("/{authSocialType}/callback")
-    fun callback(@PathVariable authSocialType: Optional<AuthSocialType>): ResponseEntity<KakaoLoginResponseDTO> {
-        val message = "로그 메시지 테스트"
-        logger.info("정상 로그: $message")
+    @GetMapping("/{authSocialType}/callback")
+    fun callback(@PathVariable authSocialType: Optional<AuthSocialType>, @RequestParam code: String): ResponseEntity<KakaoLoginResponseDTO> {
+        logger.info("정상 로그: $code")
 
         val service = authServiceFactory.getService(authSocialType.get())
         service.callback()
