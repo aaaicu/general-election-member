@@ -10,3 +10,6 @@ auth-info:
     token-request-url: ${auth-info.kakao.host}/token
   apple:
     host: https://kauth.apple.com/oauth
+
+logging:
+  config: classpath:logback.xml

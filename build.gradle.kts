@@ -39,7 +39,7 @@ dependencies {
     runtimeOnly("com.h2database:h2")
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-
+    implementation ("io.github.microutils:kotlin-logging-jvm:3.0.5")
 //    testImplementation("org.springframework.security:spring-security-test")
 
     // querydsl 추가

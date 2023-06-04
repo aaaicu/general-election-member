@@ -1,5 +1,6 @@
 package com.parsrich.generalelectionmember.ui.auth.controller
 
+import com.parsrich.generalelectionmember.GeneralElectionMemberApplication.Companion.logger
 import com.parsrich.generalelectionmember.domain.auth.application.AuthServiceFactory
 import com.parsrich.generalelectionmember.infrastructure.constant.AuthSocialType
 import com.parsrich.generalelectionmember.infrastructure.constant.EndPoint
@@ -8,7 +9,6 @@ import org.springframework.http.HttpHeaders
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.util.*
-
 
 @RequestMapping(EndPoint.AUTH)
 @RestController
@@ -28,6 +28,9 @@ class AuthController(val authServiceFactory: AuthServiceFactory) {
 
     @PostMapping("/{authSocialType}/callback")
     fun callback(@PathVariable authSocialType: Optional<AuthSocialType>): ResponseEntity<KakaoLoginResponseDTO> {
+        val message = "로그 메시지 테스트"
+        logger.info("정상 로그: $message")
+
         val service = authServiceFactory.getService(authSocialType.get())
         service.callback()
 

@@ -1,5 +1,6 @@
 package com.parsrich.generalelectionmember.domain.auth.application
 
+import com.parsrich.generalelectionmember.GeneralElectionMemberApplication.Companion.logger
 import com.parsrich.generalelectionmember.domain.auth.repository.AuthRepository
 import com.parsrich.generalelectionmember.infrastructure.properties.KakaoAuthInfoProperty
 import org.springframework.stereotype.Service
@@ -24,6 +25,9 @@ class KakaoAuthService(
     }
 
     override fun callback() {
-        TODO("Not yet implemented")
+//        TODO("Not yet implemented")
+
+        logger.info("callback service")
+
     }
 }

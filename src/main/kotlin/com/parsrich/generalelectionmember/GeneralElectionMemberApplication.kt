@@ -1,12 +1,17 @@
 package com.parsrich.generalelectionmember
 
+import mu.KotlinLogging
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
 @ConfigurationPropertiesScan
-class GeneralElectionMemberApplication
+class GeneralElectionMemberApplication{
+    companion object {
+        public val logger = KotlinLogging.logger {}
+    }
+}
 
 fun main(args: Array<String>) {
     runApplication<GeneralElectionMemberApplication>(*args)
