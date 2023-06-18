@@ -9,7 +9,7 @@ import org.springframework.boot.runApplication
 @ConfigurationPropertiesScan
 class GeneralElectionMemberApplication{
     companion object {
-        public val logger = KotlinLogging.logger {}
+        val logger = KotlinLogging.logger {}
     }
 }
 
